@@ -35,8 +35,8 @@ function Show(props: ShowProps) {
         const { name, value } = event.target;
         if (name === "fechaIndicador") {
             const dateValue = new Date(value);
-            const formattedDate = `${dateValue.getMonth() + 1}-${dateValue.getDate()}-${dateValue.getFullYear()}`;
-            setUf({ ...uf, [name]: formattedDate });
+            const formattedDate = `${dateValue.getFullYear()}-${(dateValue.getMonth() + 1).toString().padStart(2, '0')}-${dateValue.getDate().toString().padStart(2, '0')}`; // formatea la fecha como "ano-mes-dia"
+            setUf({ ...uf, [name]: formattedDate }); // actualiza el estado de uf con la fecha formateada
         } else {
             setUf({ ...uf, [name]: value });
         }

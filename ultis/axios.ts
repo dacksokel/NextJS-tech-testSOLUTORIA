@@ -43,7 +43,7 @@ const make_get_request = async () => {
 
         const response = await axios.request(config);
         for (let i = 0; i < response.data.length; i++) {
-            // console.log(response.data[i])
+            console.log(response.data[i])
             await Test.create(response.data[i]);
         }
         return response.data
